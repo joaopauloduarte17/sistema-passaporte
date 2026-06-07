@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Passaporte - Login Usuário</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h4>Login Usuário</h4>
+            </div>
+        </div>
+        <form id="frmLogin">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="cpf" type="text" class="validate">
+                    <label for="cpf">CPF (Apenas números)</label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="senha" type="password" class="validate">
+                    <label for="senha">Senha</label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="container-botao">
+                    <button type="submit" class="btn">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- JQuery -->
+    <script src="js/jquery-4.0.0.min.js"></script>
+
+    <!-- Materialize JS -->
+    <script src="js/materialize.min.js"></script>
+
+    <script src="js/jsLoginUsuario.js"></script>
+</body>
+</html>

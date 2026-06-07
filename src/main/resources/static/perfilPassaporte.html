@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Passaporte - Perfil Passaporte</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h4>Perfil Passaporte</h4>
+            </div>
+        </div>
+        <form id="frmPerfilPassaporte">
+
+            <input type="hidden" id="id">
+
+            <div class="row">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="nome" type="text" class="validate">
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="input-field col s8">
+                        <input id="descricao" type="text" class="validate">
+                        <label for="descricao">Descrição</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="versao" type="text" class="validate">
+                        <label for="versao">Versão</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="text" id="dataPublicado" class="datepicker">
+                        <label for="dataPublicado">Data Publicado</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <p>
+                            <label>
+                                <input id="ativo" type="checkbox" class="filled-in" checked="checked" />
+                                <span>Ativo</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="container-botao">
+                    <button type="submit" class="btn">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col s12">
+                <h5>Lista Perfil Passaporte</h5>
+                <div id="listaPerfis"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JQuery -->
+    <script src="js/jquery-4.0.0.min.js"></script>
+
+    <!-- Materialize JS -->
+    <script src="js/materialize.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/jsPerfilPassaporte.js"></script>
+</body>
+</html>
