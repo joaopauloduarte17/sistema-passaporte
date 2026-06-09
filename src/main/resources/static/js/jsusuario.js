@@ -5,37 +5,40 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Enviando a Requisição para Salvar no banco
-$("#frmUsuario").submit(function(event) {
-    event.preventDefault();
+const URL_USUARIO = "/sistema-passaporte/usuarios";
 
-    let usuario = {
+$(document).ready(function() {
+    $("#frmUsuario").submit(function(event) {
+        event.preventDefault();
+        salvarUsuario();
+    });
+});
+
+function salvarUsuario() {
+
+    const usuario = {
         nome: $("#nome").val(),
         cpf: $("#cpf").val(),
-        email: $("#email").val(),
         senha: $("#senha").val(),
         tipoUsuario: $("#tipoUsuario").val()
     };
 
-    console.log(usuario);
-    console.log(JSON.stringify(usuario));
+    enviarDados(URL_USUARIO, usuario, function() {
 
-    $.ajax({
-        url: "usuarios",
-        type: "POST",
-        contentType: "application/json",
-        data: JSON.stringify(usuario),
-        success: function(resposta){
-            alert("Usuário cadastrado com sucesso!");
+        exibirMensagem("Usuário cadastrado com sucesso!");
 
-            $("#frmUsuario")[0].reset();
-
-            $("#frmUsuario label").removeClass("active");
-
-            $("select").formSelect();
-        },
-        error: function(){
-            alert("Erro ao cadastrar usuário.");
-        }
+        limparFormularioUsuario();
     });
-});
+}
+
+function limparFormularioUsuario() {
+
+    $("#frmUsuario")[0].reset();
+
+    if(typeof M !== "undefined") {
+        M.updateTextFields();
+
+        $('select').formSelect();
+    }
+}
 
