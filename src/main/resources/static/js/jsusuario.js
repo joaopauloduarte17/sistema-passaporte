@@ -20,6 +20,7 @@ function salvarUsuario() {
         nome: $("#nome").val(),
         cpf: $("#cpf").val(),
         senha: $("#senha").val(),
+        email: $("#email").val(),
         tipoUsuario: $("#tipoUsuario").val()
     };
 
